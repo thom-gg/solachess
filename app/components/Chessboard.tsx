@@ -425,7 +425,7 @@ export default function Chessboard({ gameInfos, gameId }: Props) {
                     <img src="../assets/profileIcon.png" width="25px" />
 
                 </div>
-                <p style={{ fontSize: "80%", position: "absolute", bottom: "10px" }}>Made with ❤️ by Thom (Github)</p>
+                <p style={{ fontSize: "80%", position: "absolute", bottom: "10px" }}>Made with ❤️ by <a style={{ textDecoration: "underline", color: "#5e43f3" }} href="https://github.com/thom-gg/solachess/" target="_blank">Thom</a></p>
             </div >
         </>
     );
