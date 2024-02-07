@@ -1,0 +1,232 @@
+{
+    "version": "0.1.0",
+    "name": "hello_anchor",
+    "instructions": [
+        {
+            "name": "initialize",
+            "accounts": [
+                {
+                    "name": "newAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "signer",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": []
+        },
+        {
+            "name": "createGame",
+            "accounts": [
+                {
+                    "name": "globalInfoAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "signer",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "gameAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": []
+        },
+        {
+            "name": "joinGame",
+            "accounts": [
+                {
+                    "name": "gameAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "signer",
+                    "isMut": true,
+                    "isSigner": true
+                }
+            ],
+            "args": [
+                {
+                    "name": "gameId",
+                    "type": "u64"
+                }
+            ]
+        },
+        {
+            "name": "play",
+            "accounts": [
+                {
+                    "name": "gameAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "signer",
+                    "isMut": true,
+                    "isSigner": true
+                }
+            ],
+            "args": [
+                {
+                    "name": "gameId",
+                    "type": "u64"
+                },
+                {
+                    "name": "from",
+                    "type": "u8"
+                },
+                {
+                    "name": "to",
+                    "type": "u8"
+                }
+            ]
+        }
+    ],
+    "accounts": [
+        {
+            "name": "GlobalInfo",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "lastGameId",
+                        "type": "u64"
+                    },
+                    {
+                        "name": "bump",
+                        "type": "u8"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "GameAccount",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "u64"
+                    },
+                    {
+                        "name": "bump",
+                        "type": "u8"
+                    },
+                    {
+                        "name": "playerWhite",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "playerBlack",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "winner",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "lastMove",
+                        "type": "bytes"
+                    },
+                    {
+                        "name": "nextToPlay",
+                        "type": {
+                            "defined": "Color"
+                        }
+                    },
+                    {
+                        "name": "grid",
+                        "type": {
+                            "vec": {
+                                "defined": "Tile"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "types": [
+        {
+            "name": "Tile",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "piece",
+                        "type": {
+                            "defined": "Piece"
+                        }
+                    },
+                    {
+                        "name": "color",
+                        "type": {
+                            "defined": "Color"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Piece",
+            "type": {
+                "kind": "enum",
+                "variants": [
+                    {
+                        "name": "Empty"
+                    },
+                    {
+                        "name": "Pawn"
+                    },
+                    {
+                        "name": "Knight"
+                    },
+                    {
+                        "name": "Bishop"
+                    },
+                    {
+                        "name": "Rook"
+                    },
+                    {
+                        "name": "Queen"
+                    },
+                    {
+                        "name": "King"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Color",
+            "type": {
+                "kind": "enum",
+                "variants": [
+                    {
+                        "name": "White"
+                    },
+                    {
+                        "name": "Black"
+                    }
+                ]
+            }
+        }
+    ]
+}

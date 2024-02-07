@@ -1,0 +1,191 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70vw;
+    height: 40vh;
+}
+
+.container h1 {
+    display: flex;
+    align-items: end;
+    font-size: 3vw;
+    height: 8vh;
+    color: white;
+    font-weight: bold;
+}
+
+.separationLine {
+    width: 18vw;
+    height: 0.1vh;
+    background-color: #46424f;
+}
+
+
+
+.listContainer {
+    width: 69vw;
+    height: 30vh;
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+}
+
+.listContainer::-webkit-scrollbar {
+    width: 20px;
+}
+
+.listContainer::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.listContainer::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+
+
+.singleGame {
+    width: 20vw;
+    min-width: 20vw;
+    height: 25vh;
+    border-radius: 15px;
+    background-color: #2f2b3a;
+    margin-right: 2vw;
+}
+
+.singleGame img {
+    border-radius: 15px 15px 0 0;
+    height: 11vh;
+    width: 20vw;
+
+}
+
+
+
+.gameInfos {
+    display: flex;
+    flex-direction: row;
+    width: 20vw;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 0 10px;
+    height: 14vh;
+}
+
+.gameActions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gameActions p {
+    font-size: 1.5vw;
+}
+
+.gameActions button {
+    background-color: #a688fa;
+    font-size: 1.2vw;
+    font-weight: bold;
+    padding: 8px 2rem;
+    border-radius: 50px;
+
+}
+
+.gamePlayers {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media all and (max-width : 1024px) {
+    .singleGame {
+        width: 30vw;
+        min-width: 30vw;
+    }
+
+    .singleGame img {
+        width: 30vw;
+    }
+
+    .gameInfos {
+        width: 30vw;
+    }
+
+    .gameActions p {
+        font-size: 2vw;
+    }
+
+    .gameActions button {
+        font-size: 2vw;
+    }
+}
+
+@media all and (max-width: 700px) {
+    .container h1 {
+        font-size: 5vw;
+    }
+
+    .separationLine {
+        width: 40vw;
+    }
+
+    .singleGame {
+        width: 40vw;
+        min-width: 40vw;
+    }
+
+    .singleGame img {
+        width: 40vw;
+    }
+
+    .gameInfos {
+        width: 40vw;
+    }
+
+    .gameActions p {
+        font-size: 3vw;
+    }
+
+    .gameActions button {
+        font-size: 2.5vw;
+        padding: 4px 1rem;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .container h1 {
+        font-size: 7vw;
+    }
+
+    .separationLine {
+        width: 40vw;
+    }
+
+    .singleGame {
+        width: 60vw;
+        min-width: 60vw;
+    }
+
+
+    .singleGame img {
+        width: 60vw;
+    }
+
+    .gameInfos {
+        width: 60vw;
+    }
+
+    .gameActions p {
+        font-size: 5vw;
+    }
+
+    .gameActions button {
+        font-size: 5vw;
+        padding: 8px 1.5rem;
+    }
+}
