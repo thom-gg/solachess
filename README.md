@@ -1,11 +1,15 @@
 # Solachess
 ![a](https://github.com/thom-gg/solachess/blob/main/banner.png?raw=true)
 
+
 ### Description
 
 This is a on-chain chess application on Solana, using Anchor framework. I wanted to start building on Solana and this idea came to my mind as an interesting project, to practice on multiple things, as well on the backend (smart contract) than on the frontend.
 
 Solana's speed made it really interesting compared to other chains I could have done this on, because there is almost no latency between plays, so players can have a smooth experience.
+
+
+https://github.com/thom-gg/solachess/assets/79939935/1359217e-17f3-4c4a-86ae-5d708e9f85e7
 
 
 ### Technology 
